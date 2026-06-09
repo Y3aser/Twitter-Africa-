@@ -1,6 +1,12 @@
-const express = require("express"); 
-const app = express(); 
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
 
+app.get('/', (req, res) => {
+  res.send(`<h1>مختبر المصادقة التعليمي</h1><p>السيرفر شغال ✅</p><p style="color:red">هذا موقع تدريبي فقط</p>`);
+});
+
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
 // عشان نقدر نقرأ البيانات من الفورم
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public")); 
